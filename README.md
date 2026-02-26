@@ -62,5 +62,7 @@
 | 3 | resnet50 | 12 | 0.9258 |
 | 4 | tf_efficientnet_b4_ns | 10 | 0.9349 |
 
+## Матрица ошибок после обучения
+! https://github.com/sunshine-lllssi/--1/blob/фото/Unknown-1.png
 
 
