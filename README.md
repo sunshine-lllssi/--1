@@ -53,6 +53,20 @@
 | 13 | Яблоки зелёные |
 | 14 | Яблоки красные |
 
+## Распределение классов
+
+! https://github.com/sunshine-lllssi/--1/blob/фото/Снимок%20экрана%202026-02-26%20в%2021.46.05.png
+
+## Train-аугментации (Albumentations)
+- **RandomResizedCrop**: size=224×224, scale=(0.70, 1.0), ratio=(0.75, 1.33)
+- **HorizontalFlip**: p=0.5
+- **Rotate**: limit=12°, p=0.3
+- **OneOf** (p=0.2): GaussNoise(std=0.01–0.05) или GaussianBlur(kernel=3–5)
+- **Normalization**: ImageNet stats (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+## Validation-трансформы
+- Resize до 224×224 + нормализация (без стохастических аугментаций)
+
 ## Результаты K-Fold Cross Validation
 
 | Фолд | Архитектура | Эпохи | Validation Accuracy |
@@ -62,5 +76,40 @@
 | 3 | resnet50 | 12 | 0.9258 |
 | 4 | tf_efficientnet_b4_ns | 10 | 0.9349 |
 
+## Матрица ошибок 
 
 ! https://github.com/sunshine-lllssi/--1/blob/фото/Unknown-1.png
+
+## Итоговые метрики
+
+! https://github.com/sunshine-lllssi/--1/blob/фото/Снимок%20экрана%202026-02-26%20в%2021.36.29.png
+
+## TTA
+Для каждого изображения при инференсе применялось 15 аугментаций:
+1. Оригинал
+   
+2. Horizontal flip
+   
+3. Vertical flip
+
+4–6. Повороты на 90, 180, 270
+
+7–9. Flip + повороты
+
+10–11. Scale *0.9 / *1.1 с интерполяцией до 224*224
+
+12–15. Scale + flip
+
+16. CLAHE-аугментация: улучшение контраста в LAB-пространстве (clipLimit=2.0)
+
+
+
+## Рассчет f1 на тестовых данных после tta 
+
+! https://github.com/sunshine-lllssi/--1/blob/фото/5262667151015876088.jpg
+
+## Новая матрица ошибок
+
+! https://github.com/sunshine-lllssi/--1/blob/фото/Unknown-2.png
+
+
