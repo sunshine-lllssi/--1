@@ -113,3 +113,5 @@
 ! https://github.com/sunshine-lllssi/--1/blob/фото/Unknown-2.png
 
 
+## Результат 
+0.95877 на данный момент
