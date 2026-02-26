@@ -115,3 +115,11 @@
 
 ## Результат 
 0.95877 на данный момент
+
+## Dataset в google, который используется в коде
+
+! https://drive.google.com/drive/folders/1u7SaB1hIvmgoPpFNwTrbya6Gy4BDmjW1?usp=share_link 
+
+## Dataset почищенный, но не используется в коде
+
+! https://drive.google.com/drive/folders/12M9V-Lgg8g1LWnkkaWt3FShIRYvn7XkC?usp=share_link
